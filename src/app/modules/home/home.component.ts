@@ -19,7 +19,7 @@ import { AppAuthGuard } from 'src/app/guards';
 
 export class HomeComponent implements AfterContentChecked {
     public nameSesion = '';
-    public info = 'Monitor de integración CornerStone - Brive';
+    public info = 'Monitor de integración CornerStone - Evaluatest';
     private styleTapActive = 'color: #006540';
     private styleTapDefault = 'color: gray';
     public colorTap = 'color: gray';
