@@ -1,0 +1,95 @@
+<h2 mat-dialog-title class="titleDialog">{{title}}</h2>
+<mat-dialog-content>
+    <form [formGroup]="userForm">
+        <div class="row" style="">
+            <div class="col-md-6">
+                <label class="label-input">Nombre</label>
+                <input type="text" placeholder="" [(ngModel)]="nombreUser" class="inputDialog" style="width:100%"
+                    required formControlName="name">
+                <div *ngIf="userForm.get('name')?.touched && userForm.get('name')?.errors?.['required']">
+                    <label class="ErrorDialog">Error, campo requerido</label>
+                </div>
+                <div
+                    *ngIf="userForm.get('name')?.touched && userForm.get('name')?.errors?.['minlength']?.requiredLength">
+                    <label class="ErrorDialog">Error, el mínimo de caracteres es de 2</label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="label-input">Correo Electrónico</label>
+                <input type="text" placeholder="" [(ngModel)]="correoUser" class="inputDialog" style="width:100%"
+                    required formControlName="email">
+                <div *ngIf="userForm.get('email')?.touched && userForm.get('email')?.errors?.['required']">
+                    <label class="ErrorDialog">Error campo requerido</label>
+                </div>
+                <div *ngIf="userForm.get('email')?.touched && userForm.get('email')?.errors?.['email']">
+                    <label class="ErrorDialog">El formato del correo es inválido</label>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="padding-top: 30px;">
+            <div class="col-md-6">
+                <label class="label-input">Usuario</label>
+                <input type="text" placeholder="" [(ngModel)]="userName" class="inputDialog" style="width:100%" required
+                    formControlName="username">
+                <div *ngIf="userForm.get('username')?.touched && userForm.get('username')?.errors?.['required']">
+                    <label class="ErrorDialog">Error campo requerido</label>
+                </div>
+                <div *ngIf="userForm.get('username')?.touched && userForm.get('username')?.errors?.['username']">
+                    <label class="ErrorDialog">El formato del correo es inválido</label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="label-input">Estatus</label>
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-3">
+                        <span style="display: block; margin-top: 3px;">{{lbStatus}}</span>
+                    </div>
+                    <div class="col-md-3">
+                        <!-- <mat-slide-toggle color="primary"></mat-slide-toggle> -->
+                        <label class="switch">
+                            <input type="checkbox" formControlName="status" [(ngModel)]="estatus"
+                                (click)="changeStatus()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-md-12 header-permissions">
+                <span class="label-accesos" style="display: block; margin-top: 13px; margin-left: 10px;">Accesos</span>
+            </div>
+            <mat-list style="display: block; margin-top: -6px;">
+                <mat-list-item *ngFor="let item of allPermisosView">
+                    <div class="col-md-12">
+                        <div class="col-md-2">
+                            <span>{{item.Permiso}}</span>
+                        </div>
+                        <div class="col-md-2">
+
+
+                        </div>
+                        <div class="col-md-4"
+                            style="position: absolute; left:184px; top: 5px; align-items: center; justify-content: center;">
+                            <div class="col-md-2" style="position: absolute; left: 0px; top:5px;">
+                                <span>{{item.lbActive}}</span>
+                            </div>
+                            <div class="col-md-2" style="position: absolute; left: 50px; top:6px;">
+                                <label class="switch">
+                                    <input type="checkbox" [checked]="item.Active"
+                                        (click)="activePermision(item.PermisoId)">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- style="position: absolute; left:65px" -->
+                </mat-list-item>
+            </mat-list>
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end" style="position: absolute;bottom: 10px; right: 10px;">
+    <button mat-button mat-dialog-close class="btnDialogCerrar">Cancelar</button>
+    <button mat-button (click)="save()" [disabled]="userForm.invalid" class="btnDialog">{{btnTitle}}</button>
+</mat-dialog-actions>

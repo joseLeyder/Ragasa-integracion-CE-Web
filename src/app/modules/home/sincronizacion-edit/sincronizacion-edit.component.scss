@@ -1,0 +1,119 @@
+mat-dialog-content {
+    font-size: 8pt !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+}
+
+mat-icon{
+    color: #a1a1a1;
+    width: 18px !important;
+    height: 18px !important;
+    position: relative;
+    left: -3px;
+}
+
+.btn-trash{
+    position: relative;
+    top: -5px;
+    width: 25px; 
+    height: 25px;
+    background-color: #FFF !important;
+    border: 0px solid !important;
+    left: 5px;
+}
+
+.titleDialog {
+    color: #000000 !important;
+    // font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+}
+
+.label-input {
+    color: black !important;
+    margin-bottom: 0px;
+    margin-left: -14px !important;
+}
+
+.container-horas{
+    margin-left: -13px;
+    margin-top: 10px;
+    width: auto;
+    height: 140px;
+}
+
+mat-button-toggle-group {
+    margin-top: 7px;
+    box-shadow: none;
+    border: 0px solid !important;
+    margin-left: -15px !important;
+    padding-top: 5px !important;
+}
+
+mat-button-toggle {
+    height: 30px;
+    width: 30px;
+    border: 2px rgba(15, 15, 15, 0) solid !important;
+    margin-left: 2px !important;
+    margin-right: 2px !important;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    margin-top: 4px !important;
+    margin-bottom: 2px;
+    padding-top: -20px;
+    // padding: 0 5px !important;
+    z-index: 3 !important;
+    border-radius: 5px !important;
+    text-align: center;
+}
+
+mat-button-toggle:hover {
+    border: 1px rgba(214, 213, 213, 0) solid !important;
+    background-color: #FFF !important;
+    border-radius: 5px !important;
+    color: #000000;
+}
+
+mat-select {
+    position: relative;
+    top:-9px;
+    padding-top: -10px; 
+    width: 80px !important; 
+    height: 20px !important; 
+    font-size: 8pt;
+    // align-items: center !important;
+    border: 1px solid #cacaca;
+    border-radius: 2px;
+}
+
+mat-option{
+    font-size: 8pt;
+    height: 10px !important;
+}
+
+mat-form-field{
+    background-color: #FFF;
+}
+
+.mat-button-toggle-checked {
+    // box-shadow: 0 0 30px #000 !important;
+    border: 1px rgba(214, 213, 213, 0) solid !important;
+    border-radius: 5px !important;
+    background-color: #006540 !important;
+    color: #FFF;
+
+}
+
+.mat-button-toggle-input {
+    background-color: none !important;
+    // padding-left: 32px !important;
+}
+
+.btn-addhour{
+    width: 100px;
+    height: 30px;
+    color: #006540;
+    font-size: 8pt;
+    background-color: #ffffff;
+    border: 0px solid;
+}

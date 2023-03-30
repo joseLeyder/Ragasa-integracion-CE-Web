@@ -1,0 +1,86 @@
+<h2 mat-dialog-title class="titleDialog">Detalle consulta</h2>
+<mat-dialog-content>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="row">
+                        <label class="label-input">Fecha y Hora</label>
+                        <label style="margin-left: -14px; margin-top: 5px;">{{detalleConsulta.Fecha | date:'d MMMM y, h:mm'}}</label>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="label-input">Origen</label><label
+                                style="font-size: 8pt; color: black; margin-left: 60px;">Destino</label>
+                        </div>
+                        <div class="col-md-12" style="margin-top: 5px; margin-left: -14px;">
+                            <img width="12px" height="12px" [src]="'../../../assets/icons/'+detalleConsulta.OrigenIcon"
+                                style="margin-top: -3px;" />
+                            {{detalleConsulta.Origen}}
+                            <img src="../../../assets/svgicons/arrow_forward_color.svg" width="12px" height="12px"
+                                alt="" loading="lazy" class="img-icon-row" />
+                            <img style="margin-top: -3px;" width="12px" height="12px"
+                                [src]="'../../../assets/icons/'+detalleConsulta.DestinoIcon" />
+                            {{detalleConsulta.Destino}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row">
+                        <label class="label-input">Entidad</label>
+                        <label style="margin-left: -14px; margin-top: 5px;">{{detalleConsulta.Entidad}}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12" style="margin-top: 30px;">
+            <div class="row">
+                <label class="label-input">Detalles de ejecución</label>
+                <div class="col-md-12 header-list-actions">
+                    <div class="row" style="margin-top: 13px;">
+                        <div class="col-md-3">
+                            <span>Fecha y Hora</span>
+                        </div>
+                        <div class="col-md-4">
+                            <span>Acción</span>
+                        </div>
+                        <div class="col-md-5">
+                            <span style="margin-left: 0px;">Resultado</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12" style="margin-left: 7px; padding: 0px;">
+                    <mat-list >
+                        <mat-list-item *ngFor="let item of listActividades">
+                            <div class="row" style="height: 30px; width: 100%; margin-left: -7px; padding: 0px;">
+                                <div class="col-md-3" style="margin-top: 6px;">
+                                    <span>{{item.Fecha | date:'d MMMM y - h:mm'}}</span>
+                                </div>
+                                <div class="col-md-4" style="overflow: hidden; margin-top: 6px;">
+                                    <span >{{item.Accion}}</span>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="row">
+                                        <div [matTooltip]="item.Mensaje" class="col-md-4" style="margin-top: 6px;">
+                                            <img [src]="'../../../assets/svgicons/'+item.ResultadoIcon" [alt]="item.Resultado" width="12px" height="12px">
+                                            {{item.Resultado}}
+                                        </div>
+                                        <div class="col-md-8" style="margin-top: 1px; align-items: right; justify-content: right;">
+                                            <button *ngIf="item.Response.Body != null" class="btn-download" (click)="downloadBody(item.Response)"><img width="12px" height="12px" src="../../../assets/svgicons/download_FILL1_wght300_GRAD0_opsz24.svg" alt="">Response</button>
+                                            <button *ngIf="item.Request.Body != null" class="btn-download" (click)="downloadBody(item.Request)"><img width="12px" height="12px" src="../../../assets/svgicons/download_FILL1_wght300_GRAD0_opsz24.svg" alt="">Request</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-list-item>
+                    </mat-list>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end" style="position: absolute;bottom: 10px; right: 10px;">
+    <button mat-button mat-dialog-close class="btn-aceptar">Aceptar</button>
+</mat-dialog-actions>

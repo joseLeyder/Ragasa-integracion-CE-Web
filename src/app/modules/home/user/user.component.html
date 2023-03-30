@@ -1,0 +1,56 @@
+<div class="container-user" >
+    <!-- <mat-progress-spinner [mode]="'indeterminate'" *ngIf="loading$ | async"></mat-progress-spinner> -->
+    <div class="row" style="height: 20%; margin-bottom: 10px;">
+        <div class="col-md-8 container-search">
+            <div class="row">
+                <span style="color: black; font-size: 8pt;">Buscar</span>
+                <input matInput placeholder="Escribre aquí" 
+                (keyup)="filterChange($event)"
+                class="input-search" [value]="inputSearch">
+            </div>
+        </div>
+        <div class="col-md-4 container-button">
+            <button mat-raised-button color="primary" class="btn-new-user" 
+            [value]="inputSearch" (click)="openDialogAgregar()">Nuevo usuario</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-container">
+                <mat-table #table [dataSource]="dataSource" class="">
+                    <ng-container matColumnDef="{{column.id}}" *ngFor="let column of columnNames; let i = index">
+                        <div [ngClass]="">
+                            <mat-header-cell #th mat-sort-header *matHeaderCellDef
+                                [ngClass]="column.id == 'Nombre' ? 'headerTable-start' : column.id == 'Estatus' ? 'headerTable-end' : 'headerTable'">
+                                {{column.value}}</mat-header-cell>
+                            <mat-cell 
+                                *matCellDef="let element" 
+                                [ngClass]="column.id == 'Nombre' ? 'cellTable-start' : column.id == 'Estatus' ? 'cellTable-end' : 'cellTable'" style="max-height: 20px !important;"> 
+                                {{element[column.id] == true ? "Activo" : element[column.id] == false ? "Inactivo" : element[column.id]}}
+                            </mat-cell>
+                            
+                        </div>
+                    </ng-container>
+
+                    <mat-header-row *matHeaderRowDef="displayedColumns" style="font-size: 8pt !important; min-height: 40px !important; padding: 0px !important; margin: 0px !important;"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns; let a = index" 
+                    [ngClass]="(a%2) === 0 ? 'rowTable-no-pair' : 'rowTable-pair'" (click)="openDialogEditar(row)" style="font-size: 8pt; min-height: 40px;"></mat-row>
+                </mat-table>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-8">
+                <app-pagination 
+                [current]="current" 
+                [total]="total" 
+                (goTo)="onGoTo($event)" 
+                (next)="onNext($event)"
+                (previous)="onPrevious($event)">
+            </app-pagination>
+            </div>
+    </div>
+</div>

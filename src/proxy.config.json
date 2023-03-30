@@ -1,0 +1,11 @@
+{
+    "/auth/realms/ragasa":{
+        "target":"https://oauth.ragasaapps.io",
+        "secure": true,
+        "logLevel": "debug",
+        "changeOrigin":true,
+        "pathRewrite":{
+            "^/auth/realms/ragasa":""
+        }
+    }
+}

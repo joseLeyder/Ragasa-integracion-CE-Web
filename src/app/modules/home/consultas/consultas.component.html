@@ -1,0 +1,107 @@
+<div class="container-consultas">
+    <div class="row">
+        <div class="col-md-12 container-filter">
+            <div class="row" >
+                <div class="col-md-2 container-filter-item">
+                    <div class="row">
+                        <span class="label-consultas">Origen - Destino</span>
+                        <mat-select [(value)]="origenesSelected" (valueChange)="onChangeSelectOrigenes($event)" class="select-origin" >
+                            <mat-option *ngFor="let item2 of comboOrigenes" [value]="item2.OrigenId">
+                              {{item2.Origen+' - '+item2.Destino}}
+                            </mat-option>
+                          </mat-select>
+                    </div>
+                </div>
+                <div class="col-md-2 container-filter-item">
+                    <div class="row">
+                        <span class="label-consultas">Entidad</span>
+                        <mat-select [(value)]="entidadSelected" (valueChange)="onChangeSelectEntidad($event)" class="select-entidad" >
+                            <mat-option *ngFor="let item2 of comboEntidad" [value]="item2.EntidadId">
+                              {{item2.Nombre}}
+                            </mat-option>
+                          </mat-select>
+                    </div>
+                </div>
+                <div class="col-md-6 container-filter-item" style="width: 220px;">
+                    <div class="row">
+                        <div class="col-md-6" >
+                            <div class="row">
+                                <span class="label-consultas-fechainicio">Fecha inicio</span>
+                                <input class="input-date-inicio" type="date" [value]="currentDateInicio" (change)="dateInicioChange($event)"/>
+                            </div>
+                        </div>
+                        <div class="col-md-6" >
+                            <div class="row">
+                                <span class="label-consultas-fechafin">Fecha fin</span>
+                                <input class="input-date-fin" type="date" (change)="dateFinChange($event)" [value]="currentDateFin" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 container-filter-item" style="padding-left: 0px;">
+                    <div class="row">
+                        <span class="label-consultas">Resultado</span>
+                        <mat-select [(value)]="tipoResultadoSelected" (valueChange)="onChangeSelectResultado($event)" class="select-entidad" >
+                            <mat-option *ngFor="let item2 of comboTipoResultado" [value]="item2.TipoResultadoId">
+                              {{item2.Descripcion}}
+                            </mat-option>
+                          </mat-select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12" style="margin-top: 15px;">
+            <div class="table-container">
+                <mat-table #table [dataSource]="dataSource" class="">
+                    <ng-container matColumnDef="{{column.id}}" *ngFor="let column of columnNames; let i = index">
+                        <div [ngClass]="">
+                            <mat-header-cell #th mat-sort-header *matHeaderCellDef
+                                [ngClass]="column.headerclass != '' ? column.headerclass : 'headerTable'">
+                                <div *ngIf="(column.id == 'Arrow')" style="justify-content: center;">
+                                    <img  src="../../../assets/svgicons/arrow_forward.svg" width="14px" height="14px" alt=""
+                                        loading="lazy" class="img-icon-row" />
+                                </div> 
+                                <div *ngIf="(column.id != 'Arrow')">
+                                    {{column.value}}
+                                </div>    
+                            </mat-header-cell>
+                            <mat-cell 
+                                *matCellDef="let element" 
+                                [ngClass]="column.cellclass != '' ? column.id == 'Resultado' ? element['TipoResultadoId'] == 2 ? 'cellTable-end-error' : column.cellclass : column.cellclass : 'cellTable'"> 
+                                <div *ngIf="(column.id == 'Arrow')" style="justify-content: center;">
+                                    <img  src="../../../assets/svgicons/arrow_forward-cell.svg" width="14px" height="14px" alt=""
+                                        loading="lazy" class="img-icon-row" />
+                                </div>
+                                <div *ngIf="(column.id == 'FechaEjecucion')" >
+                                    {{element[column.id] | date:'d MMMM y, h:mm a'}}
+                                </div>
+                                <div *ngIf="(column.id != 'Arrow' && column.id != 'FechaEjecucion')" >
+                                    <img *ngIf="(column.id === 'Origen' || column.id === 'Destino')" [src]="'../../../assets/icons/'+element[column.id+'Icon']" width="14px" height="14px" alt=""
+                                    loading="lazy" class="img-icon-row" /><img *ngIf="(column.id == 'Resultado')" [src]="'../../../assets/svgicons/'+element[column.id+'Icon']" width="14px" height="14px" alt=""
+                                    loading="lazy" class="img-icon-row" /> {{element[column.id]}}
+                                </div>
+                            </mat-cell>
+                        </div>
+                    </ng-container>
+                    <mat-header-row *matHeaderRowDef="displayedColumns" style="font-size: 8pt !important; min-height: 40px !important; padding: 0px !important; margin: 0px !important; text-align: center !important;"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns; let a = index" 
+                    [ngClass]="(a%2) === 0 ? 'rowTable-no-pair' : 'rowTable-pair'" (click)="openDialog(row)" style="font-size: 8pt; min-height: 40px;"></mat-row>
+                </mat-table>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-8">
+            <app-pagination 
+                [current]="current" 
+                [total]="total" 
+                (goTo)="onGoTo($event)" 
+                (next)="onNext($event)"
+                (previous)="onPrevious($event)">
+            </app-pagination>
+        </div>
+</div>
+</div>

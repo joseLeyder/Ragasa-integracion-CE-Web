@@ -1,0 +1,82 @@
+<!-- Image and text -->
+<div>
+    <app-spinner style="position: absolute; top: 40%; left: 50%; z-index: 5; background-color: transparent;"></app-spinner>
+    <header class="topbar-primary">
+        <nav class="navbar ajust-nav navbar-light bg-light" >
+            <div class="container-fluid" >
+                <a class="navbar-brand ref-home-icon" href="">
+                    <img src="../../../assets/icons/ragasa_logo-big.png" class="me-2" width="105px" height="36px" alt=""
+                        loading="lazy" />
+                </a>
+                <div class="container-info">
+                    <span class="name-sesion">{{info}}</span>
+                </div>
+                <div class="container-sesion">
+                    <div class="contaiter-menu-sesion">
+                        <span class="person-icon">
+                            <mat-icon aria-hidden="false" aria-label="person icon" svgIcon="person"></mat-icon>
+                        </span>
+                        <span class="name-sesion">{{nameSesion}}</span>
+                        <span [matMenuTriggerFor]="menu" class="button-menu">
+                            <mat-icon aria-hidden="false" aria-label="arrow icon" svgIcon="arrowMenu"></mat-icon>
+                        </span>
+                    </div>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item>
+                            <mat-icon aria-hidden="false" aria-label="settings icon" svgIcon="settings"></mat-icon>
+                            Configuración
+                        </button>
+                        <button mat-menu-item (click)="logout()">Cerrar sesión</button>
+                    </mat-menu>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <aside class="left-sidebar-primario" data-sidebarbg="skin1" style="background-color: white;">
+        <!--   Sidebar scroll
+    <div class="scroll-sidebar" >
+      <app-sidebar></app-sidebar>
+    </div>
+   End Sidebar scroll-->
+    </aside>
+    <div class="page-wrapper" style="background-color: white;z-index: 50;">
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- <app-breadcrumb></app-breadcrumb> -->
+        <div class="container-primary" style="background-color: white;">
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <!-- <router-outlet></router-outlet> -->
+            <div style="border-bottom: 1px solid #d1d0d0; height: 27px;">
+                <app-tab-list class="tab-home" (reload)="onReload($event)">
+                    <ng-container *ngFor="let item of tabsList; let i = index">
+                        <app-tab-container  *ngIf="(item.enabled)" [tabTitle]="item.name" [active]="(i==0) ? true : !tabsList[i-1].enabled">
+                            <app-consultas *ngIf="(item.id==1)" [reload]="item.reload"></app-consultas>
+                            <app-sincronizacion *ngIf="(item.id==2)"></app-sincronizacion>
+                            <app-user *ngIf="(item.id==3)" [active]="item.reload"></app-user>
+                        </app-tab-container>
+                    </ng-container>
+                </app-tab-list>
+            </div>
+            
+            <!-- ============================================================== -->
+            <!-- End Start Page Content -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer text-center">
+
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+
+</div>

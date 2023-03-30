@@ -1,0 +1,118 @@
+mat-dialog-content {
+    font-size: 8pt !important;
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+}
+
+.inputDialog {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    // font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4f5467;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 2px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    margin-left: -10px !important;
+}
+
+.titleDialog {
+    /* text-align: center; */
+    color: #000000 !important;
+    // font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-left: 15px;
+}
+
+.label-input {
+    color: black !important;
+    margin-bottom: 5px;
+    margin-left: -10px !important;
+}
+
+.label-accesos {
+    color: black !important;
+    margin-bottom: 5px;
+    // margin-left: 10px !important;
+}
+
+.slide-status {
+    color: #006540 !important;
+}
+
+.header-permissions {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(221, 221, 221);
+}
+
+.switch{
+    position: relative;
+    display: inline-block;
+     width: 40px;
+     height: 20px;
+     left: 10px;
+     top: -2px;
+    //  margin-top: 5px;
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(224, 224, 224);
+    transition: .4s;
+    // border: 1px solid #c5c5c5;
+    border-radius: 34px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider:before{
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    left: -1px;
+    bottom: auto;
+    top: auto;
+    background-color: #fff;
+    transition: 0.4s;
+    border: 1px solid #cecece; 
+    border-radius: 50px;
+}
+
+.switch input:checked + .slider{
+    background-color: #006540;
+}
+
+.switch input:checked + .slider:before{
+    transform: translateX(22px);
+
+}
+
+mat-list {
+    height: 130px;
+    overflow: auto;
+}
+
+mat-dialog-content{
+    height: auto !important;
+    overflow: unset;
+}
+
+mat-list-item{
+    height: 35px !important;
+    border-bottom: 1px solid #cecece;
+}

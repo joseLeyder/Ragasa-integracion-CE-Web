@@ -1,0 +1,63 @@
+mat-dialog-content {
+    font-size: 8pt !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+}
+
+.titleDialog {
+    color: #000000 !important;
+    // font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+}
+
+.label-input {
+    color: black !important;
+    margin-bottom: 0px;
+    margin-left: -14px !important;
+}
+
+.header-list-actions {
+    margin-top: 5px;
+    background-color: rgb(226, 226, 226);
+    color: black;
+    height: 40px;
+    border-radius: 5px;
+    margin-left: -3px;
+}
+
+mat-list {
+    height: 130px;
+    overflow: auto;
+    padding: 0px !important;
+    margin-left: -7px !important;
+    width: 100%;
+}
+
+mat-list-item{
+    padding: 0px !important;
+}
+
+.btn-download {
+    background-color: #fff;
+    width: 75px;
+    height: 25px;
+    margin-left: 1px;
+    border: 0px solid;
+    border-radius: 5px;
+    color: #000000;
+    float: right;
+}
+
+.btn-download:hover {
+    background-color: #006540;
+    color: #fff;
+}
+
+.btn-aceptar{
+    background-color: #006540 !important;
+    color: #fff !important;
+
+}
+

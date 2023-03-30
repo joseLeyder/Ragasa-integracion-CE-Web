@@ -1,0 +1,59 @@
+<div class="container-tab">
+    <div class="row">
+        <div class="col-md-12">
+            <p>Sincronización automatica de actividades.</p>
+            <p>Configure cada entidad haciendo clic en el botón editar (
+                <button class="icon">
+                    <fa-icon [icon]="faPen"></fa-icon>
+                </button>)
+            </p>
+        </div>
+        <div class="col-md-12 header-sicronizacion" >
+            <div class="row">
+                <div class="col-md-3">
+                    <span class="entidad">
+                        Entidad
+                    </span>
+                </div>
+                <div class="col-md-9" >
+                    <span class="sinc">
+                        Sincronización automática
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12" >
+            <mat-list>
+                <mat-list-item *ngFor="let item of entidades; let i = index" class="text">
+                    <div class="row">
+                        <div class="col-md-3" >
+                            <span class="nombre-entidad">
+                                {{item.Nombre}}
+                            </span>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div style="width: 50%; overflow: hidden;">
+                                    <span>
+                                        {{item.ConfiguracionString}}
+                                    </span>
+                                </div>
+                                <div style="width: 10%;">
+                                    <button class="icon" style="margin-right: 20px;" (click)="openDialog(item)">
+                                        <fa-icon [icon]="faPen"></fa-icon>
+                                    </button>
+                                </div>
+                                <div style="width: 40%;">
+                                    <button class="btn-sinc" (click)="syncEntidad(item.EntidadId)">
+                                        Sincronizar ahora
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-list-item>
+            </mat-list>
+        </div>
+    </div>
+
+</div>

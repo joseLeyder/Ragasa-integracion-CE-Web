@@ -1,0 +1,96 @@
+.ajust-nav{
+    height: 67px;
+    background-color: #FFF !important;
+    box-shadow: 0px 3px 4px #0000001F !important;
+    opacity: 1 !important;
+}
+
+.ref-home-icon{
+    margin-left: 20px !important;
+}
+
+.session {
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    left: 80%;
+    top: 10%;
+}
+
+p {
+    text-align: center;
+    /* font: normal normal bold 15px/20px DM Sans; */
+    letter-spacing: 0px;
+    color: #006540;
+    opacity: 1;
+    position: relative;
+    top: 140%;
+
+}
+.nameUser {
+    font-size: 20px;
+    ;
+}
+
+.container-sesion {
+    position: relative;
+    display: inline-block;
+    /* width: 30%; */
+    top: -2px;
+    bottom: auto;
+    right: 50px;
+    left: auto;
+}
+
+.container-info{
+    position: absolute;
+    display: inline-block;
+    left: 170px;
+    /* right: auto; */
+}
+
+.container-menu-sesion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.button-menu>mat-icon{
+    width: 20px !important;
+    height: 16px !important;
+}
+
+.button-menu {
+    position: relative;
+    right: 0px;
+    top: -2px;
+    width: 15px !important;
+    margin-left: 20px;
+}
+
+.person-icon {
+    position: relative;
+    left: 0px;
+    margin-right: 5px;
+    top: 4px;
+}
+
+.person-icon>mat-icon{
+    width: 22px !important;
+    height: 22px !important;
+}
+
+.name-sesion {
+    text-align: center;
+    font: normal normal bold 12px/14px DM Sans;
+    letter-spacing: 0px;
+    color: #006540;
+    opacity: 1;
+    position: relative;
+    top: 140%;
+}
+
+.tab-home{
+    height: 100%;
+}

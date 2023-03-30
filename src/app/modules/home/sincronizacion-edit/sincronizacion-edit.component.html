@@ -1,0 +1,54 @@
+<h2 mat-dialog-title class="titleDialog">{{titleDialog}}</h2>
+<mat-dialog-content>
+    <div class="row">
+        <div class="col-md-12">
+            <label class="label-input">Ocurre los dias</label>
+            <mat-button-toggle-group [value]="diasSelected" (change)="onChange($event)"
+                name="ingredients" aria-label="Ingredients" multiple>
+                <mat-button-toggle [value]="dias.LUNES" [ngClass]="(data.Lu) ? 'mat-button-toggle-checked' : ''">Lu</mat-button-toggle>
+                <mat-button-toggle [value]="dias.MARTES">Ma</mat-button-toggle>
+                <mat-button-toggle [value]="dias.MIERCOLES">Mi</mat-button-toggle>
+                <mat-button-toggle [value]="dias.JUEVES">Ju</mat-button-toggle>
+                <mat-button-toggle [value]="dias.VIERNES">Vi</mat-button-toggle>
+                <mat-button-toggle [value]="dias.SABADO">Sa</mat-button-toggle>
+                <mat-button-toggle [value]="dias.DOMINGO">Do</mat-button-toggle>
+            </mat-button-toggle-group>
+            <div
+                    *ngIf="!banDiasValid">
+                    <label class="ErrorDialog">Debe seleccionar al menos un día</label>
+            </div>
+        </div>
+        <div class="col-md-12" style="margin-top: 20px !important;">
+            <label class="label-input">En los siguientes horarios</label>
+            <div class="container-horas">
+                <div class="row" >
+                    <div *ngIf="!banHorasValid">
+                        <label class="ErrorDialog">Debe seleccionar al menos un horario</label>
+                    </div>
+                    <div class="col-md-10" *ngFor="let item of inputsHorario; let i = index">
+                        <span style="position: relative; top: -10px; margin-right: 10px;">{{i+1}}. A las</span>
+                            <mat-select class="select-horas" [(value)]="item.HorarioSyncId" (valueChange)="onValuechange($event,i)">
+                              <mat-option *ngFor="let item2 of horarioSync" [value]="item2.HorarioSyncId">
+                                {{item2.Horario}}
+                              </mat-option>
+                            </mat-select>
+                          <button class="btn-trash" (click)="removeHorario(item)">
+                            <mat-icon aria-hidden="false" aria-label="trash icon" svgIcon="trash"></mat-icon>
+                        </button>
+                    </div>
+                    <div class="col-md-12" >
+                        <button class="btn-addhour" (click)="addHorario()">
+                            + Agregar horario
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end" style="position: absolute;bottom: 10px; right: 10px;">
+    <button mat-button mat-dialog-close class="btnDialogCerrar">Cancelar</button>
+    <button mat-button (click)="save()"  class="btnDialog">Guardar</button>
+    <!-- [disabled]="userForm.invalid" -->
+</mat-dialog-actions>

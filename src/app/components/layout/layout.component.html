@@ -1,0 +1,26 @@
+<!-- Image and text -->
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="">
+      <img src="../../../assets/icons/ragasa_logo-big.png" class="me-2" width="50%" alt="" loading="lazy" />
+    </a>
+    <div class="container-sesion">
+      <div class="contaiter-menu-sesion">
+        <span>Jose Leyder</span>
+        <button mat-button [matMenuTriggerFor]="menu">
+          <mat-icon aria-hidden="false" aria-label="arrow icon" svgIcon="arrowMenu"></mat-icon>
+        </button>
+      </div>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon aria-hidden="false" aria-label="settings icon" svgIcon="settings"></mat-icon>
+          Configuración
+        </button>
+        <button mat-menu-item>Cerrar sesión</button>
+      </mat-menu>
+    </div>
+  </div>
+  <div class="container-body">
+    <router-outlet></router-outlet>
+  </div>
+</nav>

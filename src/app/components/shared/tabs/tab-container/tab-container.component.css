@@ -1,0 +1,8 @@
+.pane {
+    /* padding: 1em; */
+    position: absolute;
+    /* background-color: red; */
+    margin-left: 6%;
+    margin-right: 10%;
+    width: 52%;
+}

@@ -1,1 +1,164 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Nunito Sans", sans-serif 8pt !important;
+}
+
+.mat-mdc-tooltip-trigger{
+    font-size: 8pt !important;
+}
+
+.cdk-overlay-connected-position-bounding-box{
+    font-size: 8pt !important;
+}
+
+.nav-tabs>li.tab-li>a {
+    padding-bottom: 6px;
+    top: 0px;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: gray;
+    font-size: 8pt;
+}
+
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:hover,
+.nav-tabs>li.active>a:focus {
+    color: #006540;
+    cursor: pointer;
+    background-color: #fff;
+    border-top: 0px solid #ddd;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 2px solid;
+    border-bottom-color: #006540;
+    text-decoration: none;
+    margin-bottom: 1px;
+}
+
+.nav-tabs>li.tab-li {
+    /* margin-left: 10px; */
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.nav-tabs {
+    border: 0px solid;
+    margin-bottom: 10px;
+    margin-left: 6%;
+    margin-top: 10px;
+}
+
+/* .container-menu-tabs{
+    border-bottom: 0px solid;
+} */
+
+.input-search {
+    width: 180px !important;
+    height: 25px !important;
+    background: #ffffff;
+    border: 1px solid rgba(182, 180, 180, 0.486);
+    border-radius: 5px;
+    font-size: 10pt;
+    padding-left: 12px;
+    color: #006540;
+    margin-left: 11px;
+}
+
+.container-button {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    top: -5px;
+    /* background-color: blue; */
+}
+
+.btn-new-user {
+    display: inline-block;
+    margin-right: 0;
+    margin-left: auto;
+    top: 0px;
+    font-size: 10pt;
+}
+
+.table-container {
+    height: 10% !important;
+
+}
+
+.btnDialog {
+    background-color: #006540 !important;
+    color: white !important;
+    font-size: 8pt !important;
+}
+
+.btnDialogCerrar {
+    background-color: #b4b4b4 !important;
+    color: #000000 !important;
+    font-size: 8pt;
+}
+
+.mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+    margin-top: -10px;
+    margin-left: -5px;
+}
+
+mat-select.select-horas .mat-mdc-select-value-text{
+    position: absolute ;
+    top: 2px;
+    left: 5px;
+}
+
+mat-select.select-horas .mat-mdc-select-arrow{
+    position: absolute;
+    top: 7px;
+    right: 3px;
+}
+
+mat-select.select-origin span.mat-mdc-select-value-text{
+    margin-left: 0px !important;
+    position: relative !important;
+    top: -1px !important;
+    left: 5px !important;
+}
+
+mat-select.select-origin .mat-mdc-select-arrow{
+    position: relative;
+    top: -1px;
+    right: -2px;
+}
+
+mat-select.select-entidad span.mat-mdc-select-value-text{
+    margin-left: 0px !important;
+    position: relative !important;
+    top: -1px !important;
+    left: 5px !important;
+}
+
+mat-select.select-entidad .mat-mdc-select-arrow{
+    position: relative;
+    top: -1px;
+    right: -2px;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    /* background-color: whitesmoke; */
+    background-color: #fff !important;
+}
+
+.mdc-data-table__cell, .mdc-data-table__header-cell
+{
+    border: 0px solid !important;
+}
+
+/* .mat-mdc-text-field-wrapper{
+    position: absolute;
+    top: 10px;
+} */
+

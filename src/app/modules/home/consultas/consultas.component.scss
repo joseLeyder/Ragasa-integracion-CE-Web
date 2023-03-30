@@ -1,0 +1,277 @@
+mat-select {
+    position: relative;
+    border: 1px solid #c0bfbf !important;
+    padding-left: 0px;
+    border-radius: 3px;
+    left: 10px;
+    width: 120px;
+    height: 25px;
+    font-size: 8pt;
+    text-align: left;
+}
+
+mat-option{
+    font-size: 8pt;
+}
+
+.label-consultas{
+    color: black; 
+    font-size: 8pt; 
+    margin-bottom: 5px;
+}
+
+.input-date-inicio{
+    font-size: 8pt; 
+    padding: 2px; 
+    width: 100px; 
+    height: 25px; 
+    // margin-right: 3px; 
+    border: 1px solid #c0bfbf !important;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+
+.input-date-fin{
+    font-size: 8pt; 
+    padding: 2px; 
+    width: 100px; 
+    height: 25px; 
+    margin-left: 3px; 
+    border: 1px solid #c0bfbf !important;
+    border-radius: 3px;
+}
+
+.label-consultas-fechainicio{
+    position: relative;
+    color: black; 
+    font-size: 8pt; 
+    margin-bottom: 5px;
+    margin-left: 10px;
+    left: -10px;
+}
+
+.label-consultas-fechafin{
+    position: relative;
+    color: black; 
+    font-size: 8pt; 
+    margin-bottom: 5px;
+    margin-left: 0px;
+    left: -5px;
+}
+
+.container-filter-item{
+    margin-right: 10px;
+}
+
+.headerTable{
+    //font: normal normal bold 12px/14px DM Sans!important;
+    background-color: #006540!important;
+    color: white!important;
+    text-align: center;
+    font-size: 8pt !important;
+    padding-left: 15px;
+}
+
+.headerTable-origen{
+    //font: normal normal bold 12px/14px DM Sans!important;
+    background-color: #006540!important;
+    color: white!important;
+    text-align: center;
+    font-size: 8pt !important;
+    max-width: 100px;
+    justify-content: right;
+    padding-right: 20px !important;
+    padding-left: 0px !important;
+    // border: 1px solid;
+}
+
+.headerTable-destino{
+    //font: normal normal bold 12px/14px DM Sans!important;
+    background-color: #006540!important;
+    color: white!important;
+    text-align: center;
+    font-size: 8pt !important;
+    max-width: 100px;
+    justify-content: left;
+    padding-left: 20px !important;
+    padding-right: 0px !important;
+    // border: 1px solid;
+}
+
+.headerTable-entidad{
+    //font: normal normal bold 12px/14px DM Sans!important;
+    background-color: #006540!important;
+    color: white!important;
+    text-align: center;
+    font-size: 8pt !important;
+    max-width: 80px;
+    justify-content: left;
+    padding-right: 20px;
+    padding-left: 20px !important;
+    // border: 1px solid;
+}
+
+.headerTable-resultado{
+    //font: normal normal bold 12px/14px DM Sans!important;
+    background-color: #006540!important;
+    color: white!important;
+    text-align: center;
+    font-size: 8pt !important;
+    // max-width: 80px;
+    justify-content: left;
+    // padding-right: 20px;
+    padding-left: 20px !important;
+    // border: 1px solid;
+}
+
+.arrow-header{
+    background-color: #006540!important;
+    color: white!important;
+    text-align: center;
+    font-size: 8pt !important;
+    max-width: 20px;
+    justify-content: center;
+    // padding-left: 5px;
+}
+
+.headerTable-start{
+    // font: normal normal bold 12px/14px DM Sans!important;
+    background-color: #006540!important;
+    color: white!important;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.headerTable-end{
+    // font: normal normal bold 12px/14px DM Sans!important;
+    // font: var(--unnamed-font-style-normal) normal bold 16px/22px var(--unnamed-font-family-nunito-sans);
+    background-color: #006540!important;
+    color: white!important;
+    text-align: center;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    justify-content: left !important;
+    padding-left: 40px !important;
+}
+
+.rowTable-pair{
+    background-color: #f5f5f5!important;
+    border-bottom-left-radius: 5px!important;
+    border-top-left-radius: 5px!important;
+    border-bottom-right-radius: 5px!important;
+    border-top-right-radius: 5px!important;
+}
+
+.rowTable-no-pair{
+    background-color: white;
+    height: 10px !important;
+}
+
+.cellTable{
+    border-color: #f5f5f5;
+    padding-left: 20px;
+}
+
+.cellTable-origen{
+    border-color: #f5f5f5;
+    max-width: 100px;
+    justify-content: left;
+    padding: 0px !important;
+    padding-right: 0px !important;
+    padding-left: 10px !important;
+}
+
+.cellTable-destino{
+    border-color: #f5f5f5;
+    max-width: 100px;
+    justify-content: left;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.cellTable-entidad{
+    border-color: #f5f5f5;
+    max-width: 80px;
+    justify-content: left;
+    padding-right: 20px;
+    padding-left: 20px !important;
+}
+
+.cellTable-entidad{
+    border-color: #f5f5f5;
+    // max-width: 80px;
+    justify-content: left;
+    // padding-right: 20px;
+    padding-left: 20px !important;
+}
+
+.arrow-cell{
+    border-color: #f5f5f5;
+    max-width: 20px;
+    justify-content: center;
+    // padding-left: 5px;
+}
+
+.cellTable-start{
+    //border-color: #f5f5f5!important;
+    border-bottom-width: 0px!important;
+    border-bottom-style: solid!important;
+    border-bottom-left-radius: 5px!important;
+    border-top-left-radius: 5px!important;
+}
+
+.cellTable-end{
+    // border-color: #f5f5f5;
+    border-bottom-width: 0px!important;
+    border-bottom-style: solid!important;
+    border-bottom-right-radius: 5px!important;
+    border-top-right-radius: 5px!important;
+    justify-content: left !important;
+    padding-left: 40px !important;
+}
+
+.cellTable-end-error{
+    // border-color: #f5f5f5;
+    border-bottom-width: 0px!important;
+    border-bottom-style: solid!important;
+    border-bottom-right-radius: 5px!important;
+    border-top-right-radius: 5px!important;
+    color: #F04B38;
+    justify-content: left !important;
+    padding-left: 40px !important;
+}
+
+mat-date-range-input{
+    font-size: 8pt;
+    width: 80px;
+    height: 25px;
+    border: 1px solid;
+    padding: 0px;
+}
+
+mat-date-range-input span{
+    display: none;
+}
+
+mat-form-field{
+    width: 120px;
+    border-bottom: 0px;
+}
+
+mat-datepicker-toggle{
+    position: relative;
+    top: -10px;
+    width: 10px!important;
+}
+
+.img-icon-row{
+    position: relative; 
+    top: -2px; 
+    margin-right: 3px;
+}
+
+// mat-header-cell{
+//     justify-content: center;
+// }
+
+
