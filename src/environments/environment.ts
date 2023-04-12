@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   api:"https://ragasa_integracion_api.consiss.com/api/v1/",
-  robots: "https://ragasa-integracion.azurewebsites.net/api/",
+  robots: "https://ragasa-integracion-ce.azurewebsites.net/api/",
   codeRobot: "vXlyl5GDvPTuLwQhzYRapi6sFPzhzwjsWBrhfb4gEctwAzFu_Cs2Ow==",
   keycloak:{
     issuer:'https://oauth.ragasaapps.io/auth/realms/ragasa',

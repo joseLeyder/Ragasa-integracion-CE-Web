@@ -7,8 +7,8 @@ export function initializeKeycloak(keycloak: KeycloakService):()=>Promise<boolea
             
             url: 'https://oauth.ragasaapps.io/auth',
             realm: 'ragasa',
-            // clientId: 'middleware-corner-brive'
-            clientId: 'cotizador-bidones'
+            clientId: 'middleware-corner-brive'
+            // clientId: 'cotizador-bidones'
           },
           initOptions:{
             checkLoginIframe:false,

@@ -1,4 +1,5 @@
 export enum RobotEnum{
     NULL = "",
-    SYNCVACANTE = "SyncEntidadFunction"
+    SYNCVACANTE = "SyncEntidadRobotFunction",
+    SYNCCANDIDATOSCORNER = "SyncEntidadRobotFunction"
 }

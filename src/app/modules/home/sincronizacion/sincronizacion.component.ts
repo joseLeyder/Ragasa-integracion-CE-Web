@@ -146,7 +146,10 @@ export class SincronizacionComponent {
       return descripcion;
    }
 
-   async syncEntidad(id: number) {
+   async syncEntidad(id: number, event: any) {
+      const button = (event.srcElement.disabled === undefined) ? event.srcElement.parentElement : event.srcElement;
+      button.setAttribute('disabled', true);
+
       this.spinnerService.show();
       const keys = Object.keys;
 
@@ -162,18 +165,17 @@ export class SincronizacionComponent {
 
          dataRobots.push(dataRobot);
       }
-
-      console.log(dataRobots);
       
       setTimeout(async () => {
+         console.log(dataRobots[id].value);
          
          let resultRobot = this.robotService.syncEntidad({ id: id },dataRobots[id].value);
          this.spinnerService.hide();
          let r = await this.utils.alertSuccess("Se inicio la sincronización").then(resultado => {
             if (resultado.value) {//success
-      
             } else {
             }
+            button.removeAttribute('disabled');
           });
        }, 1000);
       

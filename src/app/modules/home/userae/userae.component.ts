@@ -111,6 +111,7 @@ export class UseraeComponent implements OnInit {
           let permisoUsuario = permisosUsuariosTemp.find(x => x.PermisoId == item.PermisoId);
           if (permisoUsuario != null) {
             item.Active = true;
+            item.lbActive = 'Activo';
           }
         })
       }

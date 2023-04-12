@@ -9,6 +9,7 @@ import { delay } from 'rxjs';
 import { ConectorService } from 'src/app/Services/conector.service';
 import { OAuthService } from 'angular-oauth2-oidc';
 import { AppAuthGuard } from 'src/app/guards';
+import { SpinnerService } from 'src/app/Services/spinner.service';
 
 @Component({
     selector: 'app-home',
@@ -65,7 +66,7 @@ export class HomeComponent implements AfterContentChecked {
         private userService: UserService,
         private utils: UtilsService,
         private userPermisosService: UsuarioPermisoService,
-        private conector: ConectorService,
+        private spinnerService: SpinnerService,
         protected auth:AppAuthGuard) {
         this.auth.getValue()
         this.registerIcons();
@@ -96,7 +97,7 @@ export class HomeComponent implements AfterContentChecked {
     }
 
     async getSesion() {
-        this.conector.spinner$.next(true);
+        this.spinnerService.show();
         let firstName = await this.storageService.getStorage('firstName') + ' ';
         let lastName = await this.storageService.getStorage('lastName') + '';
         this.nameSesion = firstName + lastName;
@@ -132,7 +133,7 @@ export class HomeComponent implements AfterContentChecked {
                 this.logout();
             })
         }
-        this.conector.spinner$.next(false);
+        this.spinnerService.hide();
 
     }
 
